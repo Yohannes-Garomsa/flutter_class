@@ -9,7 +9,7 @@ class GradientContainer extends StatelessWidget {
   @override
   Widget build(context) {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         gradient: LinearGradient(
           colors: const [
             Color.fromARGB(255, 35, 23, 250),
@@ -20,7 +20,7 @@ class GradientContainer extends StatelessWidget {
           end: endAligment,
         ),
       ),
-      child: const Center(child: StyledText()),
+      child: const Center(child: StyledText('Hello Flutter!')),
     );
   }
 }
