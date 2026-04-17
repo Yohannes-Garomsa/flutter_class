@@ -1,3 +1,5 @@
+import 'dart:math';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class DiceRoller extends StatefulWidget {
@@ -9,10 +11,13 @@ class DiceRoller extends StatefulWidget {
 }
 
 class _DiceRollerState extends State<DiceRoller> {
-  var activeDiceImage = 'assets/images/dice1.png';
+  var currentDiceRoll = 2;
+  // var activeDiceImage = 'assets/images/dice1.png';
   void rollDice() {
+   
     setState(() {
-      activeDiceImage = 'assets/images/dice4.png';
+      currentDiceRoll = Random().nextInt(6) + 1;
+      
     });
   }
 
@@ -21,7 +26,7 @@ class _DiceRollerState extends State<DiceRoller> {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Image.asset(activeDiceImage, width: 200),
+        Image.asset('assets/images/dice$currentDiceRoll.png', width: 200),
         const SizedBox(height: 40),
         TextButton(
           onPressed: rollDice,
